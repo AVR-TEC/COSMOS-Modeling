@@ -1,9 +1,9 @@
 #                                  Installing ROS 
-#                (http://wiki.ros.org/kinetic/Installation/Ubuntu)
+                (http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
 
 ## Setup your sources.list and Set up your keys
----------------------------------------------------------------------------------
+
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) \
  main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -15,7 +15,7 @@ sudo apt-get update
 ```
 
 ## Full Installation 
----------------------------------------------------------------------------------
+
 For other options refer to ROS install webpage some packages may cause trouble
 ```
 sudo apt-get install ros-kinetic-desktop-full
@@ -29,7 +29,7 @@ sudo apt-get install python-rosinstall python-rosinstall-generator \
 ```
 
 ## Environment setup
----------------------------------------------------------------------------------
+
 ```
 source /opt/ros/kinetic/setup.bash
 
