@@ -5,8 +5,9 @@ The COSMOS Project is the Cloud Operative Station for Missions Overflights and S
 This repository contains the guidelines on how to install the necesary software and their respective usage to generate the 2D Maps and 3D Models from different sensors mounted in UAVs and UGVs.
 
 
-##Guide Index
--------------
+
+Guide Index
+-----------
 ROBOT (Robotics middleware) 
 ```
 1 - ROS (Robot Operating System)
