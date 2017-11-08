@@ -1,4 +1,4 @@
-# Running RPLIDAR 
+# 2D Mapping with RPLIDAR and Hector SLAM
 
 
 Check the authority of RPLIDAR's serial-port and Add the authority of write 
