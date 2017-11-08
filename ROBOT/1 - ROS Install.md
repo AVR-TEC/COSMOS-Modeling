@@ -1,5 +1,5 @@
 #                                  Installing ROS 
-                (http://wiki.ros.org/kinetic/Installation/Ubuntu)
+(http://wiki.ros.org/kinetic/Installation/Ubuntu)
 
 
 ## Setup your sources.list and Set up your keys
