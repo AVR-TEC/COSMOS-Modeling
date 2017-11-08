@@ -1,6 +1,8 @@
 # Running COLMAP
 (https://colmap.github.io/cli.html#cli)
 
+NOTE: To learn how to use the graphical interface the following video is available: 
+      https://www.youtube.com/watch?v=P-EC0DzeVEU
 
 
 Automatic Reconstruction by command-line interface
@@ -15,7 +17,6 @@ Assuming the Project folder contain a folder "images" with all the images
  │   +── ...
  │   +── imageN.jpg
 ```
-NOTE: To learn how to use the graphical interface the following video is available https://www.youtube.com/watch?v=P-EC0DzeVEU
 
 
 * Running Automatic Reconstruction
