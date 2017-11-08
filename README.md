@@ -6,7 +6,7 @@ This repository contains the guidelines on how to install the necesary software 
 
 
 ##Guide Index
-
+-------------
 ROBOT (Robotics middleware) 
 ```
 1 - ROS (Robot Operating System)
