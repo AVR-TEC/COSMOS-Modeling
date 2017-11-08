@@ -7,14 +7,14 @@ Automatic Reconstruction by command-line interface
 ---------------------------------------------------------------------------------
 Assuming the Project folder contain a folder "images" with all the images 
    similar to the following structure:
-
+```
  /path/to/project/...
  +── images
  │   +── image1.jpg
  │   +── image2.jpg
  │   +── ...
  │   +── imageN.jpg
-
+```
 NOTE: To learn how to use the graphical interface the following video is available https://www.youtube.com/watch?v=P-EC0DzeVEU
 
 
