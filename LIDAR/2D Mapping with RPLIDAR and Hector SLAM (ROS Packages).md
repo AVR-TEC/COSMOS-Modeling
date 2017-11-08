@@ -17,7 +17,6 @@ The next steps require of different 4 Terminals to run each program
 CTRL + Shift + N (This will open a new Terminal Window)
 
 CTRL + Shift + T (This will open a new TAB in the current Terminal Window)
-
 ```
 
 
@@ -49,7 +48,6 @@ Run Hector SLAM to generate the mapping
 source ~/catkin_ws/devel/setup.bash
 
 roslaunch hector_slam_launch tutorial.launch
-
 ```
 
 
