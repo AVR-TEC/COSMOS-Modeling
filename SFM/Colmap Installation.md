@@ -1,4 +1,4 @@
-#Installing COLMAP
+# Installing COLMAP
 (https://colmap.github.io/install.html)
 
 
