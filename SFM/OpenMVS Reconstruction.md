@@ -53,29 +53,32 @@ PROJECT_PATH=/path/to/project
 
 ## Commands Notes
 
-* DensifyPointCloud 
-Dense cloud reconstruction options
+### DensifyPointCloud 
+* Dense cloud reconstruction options
 ```
 --resolution-level arg (=1)      
 ```
-How many times to scale down the images before the point cloud computation. Where 1 means not scale down images and will produce more detailed pointcloud/mesh
-
-If there is a memory error on RefineMesh step, scaling down will help
+> How many times to scale down the images before the point cloud computation. Where 1 means not scale down images and will produce more detailed pointcloud/mesh
+> 
+> If there is a memory error on RefineMesh step, scaling down will help
+> 
 ```
 --min-resolution arg (=640)    
 ```
-Specifies the limit to scale images to no lower than this resolution. If resolution-level = 1 this settings is not required
-
+> Specifies the limit to scale images to no lower than this resolution. If resolution-level = 1 this settings is not required
+> 
 ```
 --number-views arg (=4)        
 ```
-Number of views used for depth-map estimation (0 - all neighbor views available). More will generate better results but computation time is longer
+> Number of views used for depth-map estimation (0 - all neighbor views available). More will generate better results but computation time is longer
+> 
 ```
 --number-views-fuse arg (=3) 
 ```
-Minimum number of images that agrees with an estimate during fusion in order to consider it inlier
-Reprojection error, if on 3 images "point" have small error but on 4th image have bigger error this point still accepted.
-If less than 3 images have big error this "point" not count.  For better quality a higher number-views-fuse.
+> Minimum number of images that agrees with an estimate during fusion in order to consider it inlier
+> Reprojection error, if on 3 images "point" have small error but on 4th image have bigger error this point still accepted.
+> If less than 3 images have big error this "point" not count.  For better quality a higher number-views-fuse.
+> 
 ```
 --estimate-colors arg (=1) 
 ```
@@ -87,8 +90,8 @@ Estimate the normals for the dense point-cloud.
 Required for next steps to produce the mesh, can be disabled for less memory usage and better speed
 
 
-* ReconstructMesh 
-** Reconstruction options **
+### ReconstructMesh 
+* Reconstruction options
 ```
 -d [ --min-point-distance ] arg (=2) 
 ```
@@ -113,7 +116,7 @@ Multiplier adjusting the minimum thickness considered during visibility weightin
 ```
 Multiplier adjusting the quality weight considered during graph-cut
 
-** Clean options **
+* Clean options
 ```
 --decimate arg (=1) 
 ```
@@ -139,7 +142,8 @@ Try to close small holes in the reconstructed surface (0 - disabled)
 ```
 Number of iterations to smooth the reconstructed surface (0 - disabled)
 
-* RefineMesh
+### RefineMesh
+* Refine mesh options
 ```
 --max-views arg (=8)   
 ```
