@@ -50,3 +50,148 @@ PROJECT_PATH=/path/to/project
 ```
 ./openMVS/build/bin/TextureMesh $PROJECT_PATH/project_dense_mesh_refine.mvs
 ```
+
+## Commands Notes
+
+* DensifyPointCloud 
+Dense cloud reconstruction options
+```
+--resolution-level arg (=1)      
+```
+How many times to scale down the images before the point cloud computation. Where 1 means not scale down images and will produce more detailed pointcloud/mesh
+
+If there is a memory error on RefineMesh step, scaling down will help
+```
+--min-resolution arg (=640)    
+```
+Specifies the limit to scale images to no lower than this resolution. If resolution-level = 1 this settings is not required
+
+```
+--number-views arg (=4)        
+```
+Number of views used for depth-map estimation (0 - all neighbor views available). More will generate better results but computation time is longer
+```
+--number-views-fuse arg (=3) 
+```
+Minimum number of images that agrees with an estimate during fusion in order to consider it inlier
+Reprojection error, if on 3 images "point" have small error but on 4th image have bigger error this point still accepted.
+If less than 3 images have big error this "point" not count.  For better quality a higher number-views-fuse.
+```
+--estimate-colors arg (=1) 
+```
+Estimate the colors for the dense point-cloud. Can be disabled for less memory usage and better speed
+```
+--estimate-normals arg (=0)
+```
+Estimate the normals for the dense point-cloud.
+Required for next steps to produce the mesh, can be disabled for less memory usage and better speed
+
+
+* ReconstructMesh 
+** Reconstruction options **
+```
+-d [ --min-point-distance ] arg (=2) 
+```
+Minimum distance in pixels between the projection of two 3D points to consider them different while triangulating (0 - disabled). Higher numbers get less quality.
+```
+--constant-weight arg (=1)     
+```
+Considers all view weights 1 instead of the available weight
+
+```
+-f [ --free-space-support ] arg (=0)
+```
+Exploits the free-space support in order to reconstruct weakly-represented surfaces
+
+```
+--thickness-factor arg (=2)
+```
+Multiplier adjusting the minimum thickness considered during visibility weighting
+
+```
+--quality-factor arg (=1)  
+```
+Multiplier adjusting the quality weight considered during graph-cut
+
+** Clean options **
+```
+--decimate arg (=1) 
+```
+Decimation factor in range [0..1] to be applied to the reconstructed surface (1 - disabled)
+
+```
+--remove-spurious arg (=20)  
+```
+spurious factor for removing faces with too long edges or isolated components (0 - disabled)
+• what dimension?
+```
+--remove-spikes arg (=1) 
+```
+Flag controlling the removal of spike faces
+
+```
+--close-holes arg (=30) 
+```
+Try to close small holes in the reconstructed surface (0 - disabled)
+
+```
+--smooth arg (=2)  
+```
+Number of iterations to smooth the reconstructed surface (0 - disabled)
+
+* RefineMesh
+```
+--max-views arg (=8)   
+```
+Maximum number of neighbor images used to refine the mesh
+```
+--decimate arg (=0)   
+```
+Decimation factor in range [0..1] to be applied to the input surface before refinement (0 - auto, 1 - disabled)
+
+```
+--ensure-edge-size arg (=1)  
+```
+Ensure edge size and improve vertex valence of the input surface (0 - disabled, 1 - auto, 2 - force). Disable will get a lower quality
+```
+--max-face-area arg (=64) 
+```
+Maximum face area projected in any pair of images that is not subdivided (0 - disabled). Less is better for details but may generate noise
+```
+--scales arg (=3) 
+```
+How many iterations to run mesh optimization on multi-scale images. With more steps more refinements and higher quality
+```
+--scale-step arg (=0.5)  
+```
+Image scale factor used at each mesh optimization step.
+```
+--reduce-memory arg (=1)   
+```
+Recompute some data in order to reduce memory requirements.
+```
+--alternate-pair arg (=0) 
+```
+Refine mesh using an image pair alternatively as reference (0 - both, 1 - alternate, 2 - only left, 3 - only right)
+
+```
+--regularity-weight arg   
+```
+Scalar regularity weight to balance between photo-consistency and regularization terms during mesh optimization
+
+```
+--rigidity-elasticity-ratio arg 
+```
+Scalar ratio used to compute the regularity gradient as a combination of rigidity and elasticity
+```
+--gradient-step arg
+```
+Gradient step to be used instead (0 - auto)
+```
+--planar-vertex-ratio arg (=0)  
+```
+Threshold used to remove vertices on planar patches (0 - disabled)
+```
+--use-cuda arg (=1)  
+```
+Refine mesh using CUDA
