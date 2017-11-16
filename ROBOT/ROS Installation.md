@@ -11,6 +11,11 @@ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C
 
 sudo apt-get update
 ```
+##Jetson TX1/TX2 Dependencies
+Install the ssl certificates on new python istances to avoid errors in TX1 and TX2
+```
+sudo apt-get install ca-certificates
+```
 
 ## Full Installation 
 
