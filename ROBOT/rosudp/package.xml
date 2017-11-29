@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>rosudp</name>
+  <version>1.0.0</version>
+  <description>Export Data from ROS to OpenKAI by UDP</description>
+
+  <maintainer email="mario.r@enroutelab.com">OpenKAI ROS Maintainer</maintainer>
+  <license>Free</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rosconsole</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rosconsole</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+
+</package>
